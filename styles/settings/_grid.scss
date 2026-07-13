@@ -1,0 +1,71 @@
+@use '../primatives/' as p;
+
+/*custom grid styles*/
+//4 equal fraction columns on mobile 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+//12 square fraction columns from medium breakpoint and up
+@media (min-width: #{p.$bp-small}) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+  }
+}
+
+
+
+
+
+
+
+//Basic scss loop to create column span classes
+//These variables define how many columns are used on mobile and desktop
+$desktop-grid-columns: 12;
+$mobile-grid-columns: 4;
+
+//The breakpoints in use on this project:
+$breakpoints: (
+  xsm: p.$bp-x-small,
+  sm: p.$bp-small,
+  md: p.$bp-medium,
+  lg: p.$bp-large,
+  xlg: p.$bp-x-large,
+  xxlg: p.$bp-xx-large
+);
+
+//This loop creates mobile .col-1 to .col-4 classes, e.g. .col-1 {grid-column-end: span 1}, .col-2 {grid-column-end: span 2} etc
+@for $i from 1 through $mobile-grid-columns {
+  .col-#{$i} {
+    grid-column-end: span #{$i};
+    grid-column-start: auto;
+  }
+}
+
+//creates column start classes for each breakpoint
+//.sm-start-1 {grid-column-start: 1}, .sm-start-2 {grid-column-start: 2}
+@each $breakpoint, $value in $breakpoints {
+  @media (min-width: $value) {
+    @for $i from 1 through $desktop-grid-columns {
+      .#{$breakpoint}-start-#{$i} {
+        grid-column-start: #{$i};
+      }
+    }
+  }
+}
+
+
+//This loop creates column span classes for each breakpoint from sm up
+//e.g. .sm-col-1 {grid-column-end: span1}, .md-col-2 {grid-column-end: span2} and .lg-col-2 {grid-column-end: span2} etc
+@each $breakpoint, $value in $breakpoints {
+  @media (min-width: $value) {
+    @for $i from 1 through $desktop-grid-columns {
+      .#{$breakpoint}-col-#{$i} {
+        grid-column-end: span #{$i};
+      }
+    }
+  }
+}

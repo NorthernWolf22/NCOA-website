@@ -1,0 +1,39 @@
+@use "../primatives/" as p;
+
+//modal styles
+
+.modal {
+    background: #fff;
+    width: p.$spacing-1600;
+    height: p.$spacing-1600;
+    /* square */
+    padding: p.$spacing-500;
+    border-radius: var(--border-radius-medium);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    &__background {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        /* dark see-through */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+    }
+
+    &__button {
+        position: absolute;
+        top: p.$spacing-400;
+        right: p.$spacing-400;
+    }
+
+    .button {
+        margin-top: p.$spacing-300;
+    }
+}

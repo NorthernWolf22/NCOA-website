@@ -1,0 +1,17 @@
+@use '../../primatives/' as p;
+
+/* Toggle button semantic tokens (CSS variables) */
+
+:root {
+  --tog-btn-font: #{p.$font-size-200};
+  --tog-btn-line: #{p.$line-height-200};
+}
+
+/* Responsive overrides */
+
+@media (min-width: #{p.$bp-medium}) {
+  :root {
+    --tog-btn-font: #{p.$font-size-400};
+    --tog-btn-line: #{p.$line-height-200};
+  }
+}

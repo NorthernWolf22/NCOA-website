@@ -1,0 +1,83 @@
+@use '../primatives/' as p;
+
+//banner module styles
+.bannerModule {
+    position: relative;
+    height: p.$spacing-1625;
+    width: 100%;
+
+    &__block {
+        position: absolute;
+        left: 0;
+        bottom: -64px;
+        width: p.$spacing-1625;
+        height: p.$spacing-800;
+        transform: rotate(-90deg);
+        transform-origin: top left;
+        z-index: 2;
+        padding: p.$spacing-300 p.$spacing-650;
+        color: var(--colour-text-inverse);
+        background-color: var(--colour-background-accent-strong);
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    &__image {
+        object-fit: cover;
+        object-position: left;
+    }
+}
+
+@media (min-width: #{p.$bp-small}) {
+    .bannerModule {
+        height: p.$spacing-1650;
+
+        &__block {
+            width: p.$spacing-1650;
+        }
+
+        &__image {
+            object-position: center;
+        }
+    }
+}
+
+
+@media (min-width: #{p.$bp-medium}) {
+    .bannerModule {
+        &__block {
+            bottom: -72px;
+            height: p.$spacing-850;
+        }
+    }
+}
+
+
+
+@media (min-width: #{p.$bp-large}) {
+    .bannerModule {
+        &__block {
+            bottom: -80px;
+            height: p.$spacing-900;
+        }
+    }
+}
+
+@media (min-width: #{p.$bp-x-large}) {
+    .bannerModule {
+        &__block {
+            bottom: -84px;
+            height: p.$spacing-950;
+        }
+    }
+}
+
+
+@media (min-width: #{p.$bp-xx-large}) {
+    .bannerModule {
+        &__block {
+            bottom: -100px;
+            height: p.$spacing-1050;
+        }
+    }
+}

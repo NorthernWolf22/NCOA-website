@@ -1,0 +1,35 @@
+ //all style files within the semantics folder.
+
+ //colour
+ @forward './colour/_background.scss';
+ @forward './colour/_border.scss';
+ @forward './colour/_divider.scss';
+ @forward './colour/_icons.scss';
+ @forward './colour/_surface.scss';
+ @forward './colour/_text.scss';
+
+ //spacing / modules
+ @forward './spacing/modules/_moduleSpacing.scss';
+
+ //spacing / components
+ @forward './spacing/component/_accordion.scss';
+ @forward './spacing/component/_button.scss';
+ @forward './spacing/component/_card.scss';
+ @forward './spacing/component/_forms.scss';
+ @forward './spacing/component/_toggleButton.scss';
+ @forward './spacing/component/_header.scss';
+
+ //spacing / border
+ @forward './spacing/border/_borderWidth.scss';
+ @forward './spacing/border/_borderRadius.scss';
+
+ //typography
+ @forward './typography/_accTextTokens.scss';
+ @forward './typography/_bodyTextTokens.scss';
+ @forward './typography/_btnTextTokens.scss';
+ @forward './typography/_cardTextTokens.scss';
+ @forward './typography/_formTextTokens.scss';
+ @forward './typography/_headingTextTokens.scss';
+ @forward './typography/_linkTextTokens.scss';
+ @forward './typography/_togBtnTextTokens.scss';
+ @forward './typography/_featuredArticle.scss';

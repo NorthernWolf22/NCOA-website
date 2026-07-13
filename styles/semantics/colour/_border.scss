@@ -1,0 +1,18 @@
+@use '../../primatives/' as p;
+
+/* Border semantic tokens (CSS variables) */
+
+:root {
+  --colour-border-default: #{p.$neutral-900};
+  --colour-border-muted: #{p.$neutral-700};
+  --colour-border-disabled: #{p.$neutral-500};
+
+  --colour-border-accent-strong: #{p.$brand-900};
+  --colour-border-accent-stronger: #{p.$neutral-800}; //new dark
+
+  --colour-border-focus-outer: #{p.$neutral-900};
+  --colour-border-focus-inner: #{p.$neutral-100};
+
+  --colour-border-warning: #{p.$warning-500};
+  --colour-border-danger: #{p.$danger-500};
+}

@@ -1,0 +1,173 @@
+@use '../primatives/' as p;
+
+/*icon styles*/
+
+.icon {
+    //visual icon, not clickable
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    flex: 0 0 auto; //prevents icon from growing or shrinking
+
+    svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    &--button {
+        //functional icon button
+        padding: p.$spacing-100;
+        border-radius: var(--border-radius-small);
+        cursor: pointer;
+
+        &:focus-visible {
+            outline: transparent;
+            //f-visible only applied when tabbed to or using assistive tech
+            box-shadow:
+                0 0 0 0.2rem var(--colour-border-focus-inner),
+                0 0 0 0.4rem var(--colour-border-focus-outer);
+        }
+    }
+
+    &--primary {
+        //include the colours for primary
+        border: var(--border-width-thin) solid var(--colour-border-accent-strong);
+        background-color: var(--colour-background-accent-strong);
+
+        svg {
+            color: var(--colour-icon-inverse);
+        }
+
+        &:hover {
+            background-color: var(--colour-background-inverse);
+
+            svg {
+                color: var(--colour-icon-accent-strong);
+            }
+        }
+    }
+
+    &--secondary {
+        //include the colours for secondary
+        border: var(--border-width-thin) solid transparent;
+        background-color: var(--colour-background-inverse);
+
+        svg {
+            color: var(--colour-icon-accent-strong);
+        }
+
+        &:hover {
+            background-color: var(--colour-background-accent-strong);
+
+            svg {
+                color: var(--colour-icon-inverse);
+            }
+        }
+    }
+
+    &--primary--unfilled {
+        //transparent background option for the primary colour scheme
+        background-color: transparent;
+        border: var(--border-width-thin) solid transparent;
+
+        svg {
+            color: var(--colour-icon-inverse);
+        }
+
+        &:hover {
+            background-color: transparent;
+
+            svg {
+                color: var(--colour-icon-default);
+            }
+        }
+
+        &:focus-visible {
+            border: var(--border-width-thin) solid var(--colour-border-accent-strong);
+        }
+    }
+
+    &--secondary--unfilled {
+        //transparent background option for the secondary colour scheme
+        background-color: transparent;
+        border: var(--border-width-thin) solid transparent;
+
+        svg {
+            color: var(--colour-icon-accent-strong);
+        }
+
+        &:hover {
+            background-color: transparent;
+
+            svg {
+                color: var(--colour-icon-default);
+            }
+        }
+
+        &:focus-visible {
+            border: var(--border-width-thin) solid var(--colour-border-accent-strong);
+        }
+    }
+
+    &--primary--disabled {
+        border: var(--border-width-thin) solid var(--colour-border-disabled);
+        background-color: var(--colour-background-disabled);
+        cursor: default;
+
+        svg {
+            color: var(--colour-icon-disabled-inverse);
+        }
+
+        &:hover {
+            border: var(--border-width-thin) solid var(--colour-border-disabled);
+            background-color: var(--colour-background-disabled);
+            svg {
+                color: var(--colour-icon-disabled-inverse);
+            }
+        }
+    }
+
+    &--secondary--disabled {
+        border: var(--border-width-thin) solid var(--colour-border-disabled);
+        background-color: var(--colour-background-disabled-inverse);
+        cursor: default;
+
+        svg {
+            color: var(--colour-text-disabled);
+        }
+
+        &:hover {
+            border: var(--border-width-thin) solid var(--colour-border-disabled);
+            background-color: var(--colour-background-disabled-inverse);
+            svg {
+                color: var(--colour-icon-disabled);
+            }
+        }
+    }
+
+    &--unfilled--disabled {
+        border: var(--border-width-thin) solid transparent;
+        background-color: transparent;
+        cursor: default;
+
+        svg {
+            color: var(--colour-icon-disabled);
+        }
+
+         &:hover {
+            border: var(--border-width-thin) solid transparent;
+            background: transparent;
+
+            svg {
+                color: var(--colour-icon-disabled);
+            }
+        }
+    }
+
+    &--rounded {
+        border-radius: var(--border-radius-full);
+        padding: p.$spacing-200;
+    }
+}

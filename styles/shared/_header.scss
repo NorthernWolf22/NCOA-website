@@ -1,0 +1,121 @@
+@use "../primatives/" as p;
+
+//header module styles
+
+.headerComponent {
+    padding: var(--header-padding-y) 0;
+
+    &__inner {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        &-menu {
+            display: inline-flex;
+        }
+    }
+
+    &__links {
+        display: none;
+        width: 100%;
+
+        .nav {
+            width: fit-content;
+
+            .link {
+                +.link {
+                    margin-left: p.$spacing-450;
+                }
+            }
+        }
+    }
+
+    &__block {
+        width: fit-content;
+    }
+
+    &--isOpen {
+        background-color: var(--colour-background-inverse);
+
+        .headerComponent__links {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            padding: p.$spacing-500 0;
+            height: calc(100vh - 69px); //panel is full height minus the height of the header
+
+            .nav {
+                width: fit-content;
+                flex: 1 1 auto;
+
+                .link {
+                    display: block;
+                    margin-bottom: p.$spacing-600;
+
+                    +.link {
+                        margin-left: unset;
+                    }
+                }
+            }
+
+            .headerComponent__block {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                flex-direction: column;
+                flex: 0 0 auto;
+
+                .link {
+                    width: 100%;
+                    margin-bottom: p.$spacing-450;
+                }
+            }
+        }
+    }
+
+    &--absolute {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+}
+
+@media (min-width: #{p.$bp-large}) {
+    .headerComponent {
+        &__inner-menu {
+            display: none!important;
+        }
+
+        &__links {
+            display: inline-flex;
+            flex-direction: row;
+            width: unset;
+            align-items: center;
+
+            .nav {
+                height: fit-content;
+                margin-right: p.$spacing-800;
+            }
+        }
+
+        &__block {
+            display: flex;
+            align-items: center;
+
+            .button {
+                margin-left: p.$spacing-500;
+                margin-right: p.$spacing-200;
+            }
+        }
+    }
+}
+
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}

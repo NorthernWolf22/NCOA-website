@@ -1,0 +1,17 @@
+@use '../../primatives/' as p;
+
+/* Button semantic tokens (CSS variables) */
+
+:root {
+  --btn-font: #{p.$font-size-200};
+  --btn-line: #{p.$line-height-200};
+}
+
+/* Responsive overrides */
+
+@media (min-width: #{p.$bp-medium}) {
+  :root {
+    --btn-font: #{p.$font-size-400};
+    --btn-line: #{p.$line-height-200};
+  }
+}

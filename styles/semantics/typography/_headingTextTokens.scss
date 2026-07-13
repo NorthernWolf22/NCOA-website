@@ -1,0 +1,111 @@
+@use '../../primatives/' as p;
+
+/*Heading semantic tokens (CSS variables), please do not apply these directly, use a h1-h6 class found in the settings/_typography stylesheet*/
+
+:root {
+  /* H1 */
+  --h1-font: #{p.$font-size-800};
+  --h1-line: #{p.$line-height-700};
+
+  /* H2 */
+  --h2-font: #{p.$font-size-700};
+  --h2-line: #{p.$line-height-600};
+
+  /* H3 */
+  --h3-font: #{p.$font-size-600};
+  --h3-line: #{p.$line-height-500};
+
+  /* H4 */
+  --h4-font: #{p.$font-size-500};
+  --h4-line: #{p.$line-height-400};
+
+  --h5-font: #{p.$font-size-500};
+  --h5-line: #{p.$line-height-400};
+}
+
+/*Responsive overrides*/
+
+@media (min-width: #{p.$bp-medium}) {
+  :root {
+    /* H1 */
+    --h1-font: #{p.$font-size-900};
+    --h1-line: #{p.$line-height-800};
+
+    /* H2 */
+    --h2-font: #{p.$font-size-800};
+    --h2-line: #{p.$line-height-700};
+
+    /* H3 */
+    --h3-font: #{p.$font-size-700};
+    --h3-line: #{p.$line-height-600};
+
+    /* H4 */
+    --h4-font: #{p.$font-size-600};
+    --h4-line: #{p.$line-height-500};
+  }
+}
+
+
+@media (min-width: #{p.$bp-large}) {
+  :root {
+    /* H1 */
+    --h1-font: #{p.$font-size-1000};
+    --h1-line: #{p.$line-height-900};
+
+    /* H2 */
+    --h2-font: #{p.$font-size-900};
+    --h2-line: #{p.$line-height-800};
+
+    /* H3 */
+    --h3-font: #{p.$font-size-800};
+    --h3-line: #{p.$line-height-700};
+
+    /* H4 */
+    --h4-font: #{p.$font-size-700};
+    --h4-line: #{p.$line-height-600};
+
+    --h5-font: #{p.$font-size-650};
+    --h5-line: #{p.$line-height-550};
+  }
+}
+
+
+@media (min-width: #{p.$bp-x-large}) {
+  :root {
+    /* H1 */
+    --h1-font: #{p.$font-size-1100};
+    --h1-line: #{p.$line-height-1000};
+
+    /* H2 */
+    --h2-font: #{p.$font-size-1000};
+    --h2-line: #{p.$line-height-900};
+
+    /* H3 */
+    --h3-font: #{p.$font-size-900};
+    --h3-line: #{p.$line-height-800};
+
+    /* H4 */
+    --h4-font: #{p.$font-size-800};
+    --h4-line: #{p.$line-height-700};
+  }
+}
+
+@media (min-width: #{p.$bp-xx-large}) {
+  :root {
+    /* H1 */
+    --h1-font: #{p.$font-size-1200};
+    --h1-line: #{p.$line-height-1100};
+
+    /* H2 */
+    --h2-font: #{p.$font-size-1100};
+    --h2-line: #{p.$line-height-1000};
+
+    /* H3 */
+    --h3-font: #{p.$font-size-1000};
+    --h3-line: #{p.$line-height-900};
+
+    /* H4 */
+    --h4-font: #{p.$font-size-900};
+    --h4-line: #{p.$line-height-800};
+  }
+}

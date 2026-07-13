@@ -1,0 +1,8 @@
+@use '../../../primatives/' as p;
+
+//semantic card spacing variables
+:root {
+    --card-padding-x: #{p.$spacing-100};
+    --card-padding-y: #{p.$spacing-100};
+    --card-img-to-text-gap: #{p.$spacing-300};
+}

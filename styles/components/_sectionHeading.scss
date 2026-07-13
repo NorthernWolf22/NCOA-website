@@ -1,0 +1,10 @@
+//section heading styles
+
+.sectionHeading {
+    // max-width: 67rem;
+
+    &__light {
+        display: inline;
+        color: var(--colour-text-subtle);
+    }
+}

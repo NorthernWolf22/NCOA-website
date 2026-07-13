@@ -1,0 +1,95 @@
+@use '../primatives' as p;
+
+//global button styles
+.button {
+    $this: &;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    text-decoration: none;
+    outline: transparent; //removes the blue default ring
+
+    &:focus-visible {
+        //f-visible only applied when tabbed to or using assistive tech
+        box-shadow:
+            0 0 0 0.2rem var(--colour-border-focus-inner),
+            0 0 0 0.4rem var(--colour-border-focus-outer);
+    }
+
+    &__label {
+        font-family: p.$font-family-base;
+        font-size: var(--btn-font);
+        line-height: var(--btn-line);
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &--primary {
+        //to do: default green, white hover 
+        border: var(--border-width-thin) solid var(--colour-border-accent-stronger);
+        background-color: var(--colour-border-accent-stronger);
+        padding: var(--button-padding-y) var(--button-padding-x);
+
+        #{$this}__label {
+            color: var(--colour-text-inverse);
+        }
+
+        &:hover {
+            background-color: var(--colour-background-inverse);
+
+            #{$this}__label {
+                color: var(--colour-text-accent-stronger);
+            }
+        }
+    }
+
+    &--secondary {
+        //to do: default white, green hover
+        border: var(--border-width-thin) solid var(--colour-border-accent-stronger);
+        background-color: var(--colour-background-inverse);
+        padding: var(--button-padding-y) var(--button-padding-x);
+
+        #{$this}__label {
+            color: var(--colour-text-accent-stronger);
+        }
+
+        &:hover {
+            background-color: var(--colour-background-accent-stronger);
+
+            #{$this}__label {
+                color: var(--colour-text-inverse);
+            }
+        }
+    }
+
+    &--primary--disabled {
+        color: var(--colour-text-disabled-inverse);
+        background-color: var(--colour-background-disabled);
+        border: var(--border-width-thin) solid var(--colour-border-disabled);
+        padding: var(--button-padding-y) var(--button-padding-x);
+        cursor: not-allowed;
+        pointer-events: none;
+        /* prevents clicks if someone forgets the disabled attribute */
+
+        &:focus-visible {
+            box-shadow: none;
+        }
+    }
+
+    &--secondary--disabled {
+        color: var(--colour-text-disabled);
+        background-color: var(--colour-background-disabled-inverse);
+        border: var(--border-width-thin) solid var(--colour-border-disabled);
+        padding: var(--button-padding-y) var(--button-padding-x);
+        cursor: not-allowed;
+        pointer-events: none;
+        /* prevents clicks if someone forgets the disabled attribute */
+
+        &:focus-visible {
+            box-shadow: none;
+        }
+    }
+}

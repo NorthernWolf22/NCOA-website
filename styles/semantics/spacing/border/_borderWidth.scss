@@ -1,0 +1,7 @@
+@use '../../../primatives/' as p;
+
+//semantic border weight spacing variables
+:root {
+    --border-width-thin: 0.1rem;
+    --border-width-thick: 0.2rem;
+}

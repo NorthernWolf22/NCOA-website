@@ -1,0 +1,29 @@
+@use '../../primatives/' as p;
+
+/*SEMANTIC FORM TEXT STYLES*/
+
+/* Form label semantic tokens (CSS variables) */
+
+:root {
+  /* Regular form label */
+  --form-label-font: #{p.$font-size-100};
+  --form-label-line: #{p.$line-height-100};
+
+  /* Small form label */
+  --form-label-small-font: #{p.$font-size-100};
+  --form-label-small-line: #{p.$line-height-100};
+}
+
+/* Responsive overrides */
+
+@media (min-width: #{p.$bp-medium}) {
+  :root {
+    /* Regular form label */
+    --form-label-font: #{p.$font-size-200};
+    --form-label-line: #{p.$line-height-200};
+
+    /* Small form label */
+    --form-label-small-font: #{p.$font-size-100};
+    --form-label-small-line: #{p.$line-height-100};
+  }
+}

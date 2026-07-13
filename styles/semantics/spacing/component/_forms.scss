@@ -1,0 +1,9 @@
+@use '../../../primatives/' as p;
+
+//semantic forms spacing variables
+:root {
+    --form-label-to-input-gap: #{p.$spacing-200};
+    --form-input-to-feedback-gap: #{p.$spacing-200};
+    --form-input-padding-y: #{p.$spacing-300};
+    --form-input-padding-x: #{p.$spacing-300};
+}

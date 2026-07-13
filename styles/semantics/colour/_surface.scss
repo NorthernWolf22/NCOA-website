@@ -1,0 +1,8 @@
+@use '../../primatives/' as p;
+
+/* Surface semantic tokens */
+
+:root {
+  --colour-surface-default: #{p.$neutral-100};
+  --colour-surface-muted: #{p.$brand-100};
+}

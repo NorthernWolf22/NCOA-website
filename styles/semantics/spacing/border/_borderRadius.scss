@@ -1,0 +1,10 @@
+@use '../../../primatives/' as p;
+
+/* border radius semantic variables*/
+
+:root {
+    --border-radius-small: #{p.$radius-200};
+    --border-radius-medium: #{p.$radius-400};
+    --border-radius-large: #{p.$radius-800};
+    --border-radius-full: #{p.$radius-full};
+}

@@ -1,0 +1,10 @@
+@use "../primatives/" as p;
+//policy page styles
+
+.policies {
+    padding: var(--module-padd-y-medium) 0;
+
+    &__heading {
+        margin-bottom: p.$spacing-600;
+    }
+}

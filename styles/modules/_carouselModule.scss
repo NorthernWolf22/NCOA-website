@@ -1,0 +1,46 @@
+@use "../primatives/" as p;
+
+//carousel module
+
+
+.carouselModule {
+    padding: var(--module-padd-y-medium) 0 calc(var(--module-padd-y-medium) + p.$spacing-1250) 0;
+    // background-color: var(--colour-surface-muted);
+
+    &__inner {
+        margin-top: p.$spacing-600;
+        position: relative;
+        
+        &-controls {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            bottom: -60px;
+            border-radius: var(--border-radius-large);
+            width: 100%;
+
+            .swiper-button-prev {
+                margin-right: p.$spacing-600;
+            }
+        }
+    }
+
+    .swiper-navigation-icon {
+        display: none;
+    }
+}
+
+@media (min-width: #{p.$bp-small}) {
+    .carouselModule {
+        padding: var(--module-padd-y-medium) 0;
+
+        &__inner {
+            &-controls {
+                top: -136px;
+                right: 0;
+                bottom: unset;
+                width: fit-content;
+            }
+        }
+    }    
+}

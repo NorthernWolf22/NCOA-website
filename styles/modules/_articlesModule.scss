@@ -1,0 +1,17 @@
+@use "../primatives/" as p;
+
+//articles module styles
+
+.articlesModule {
+    padding: var(--module-padd-y-large) 0;
+
+     .filter {
+         margin-bottom: p.$spacing-650;
+
+        label {
+            margin-right: p.$spacing-650;
+            margin-bottom: p.$spacing-600;
+            display: inline-block;
+        }
+    }
+}

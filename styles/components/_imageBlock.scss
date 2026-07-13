@@ -1,0 +1,41 @@
+//Image block styles
+
+.imageBlock {
+    border: transparent;
+    padding: 0;
+
+    &__image {
+        display: block;
+        width: 100%;
+        height: auto;
+
+    }
+
+    &:hover {
+        position: relative;
+
+        &::after {
+            //gradient overlay
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #999999;
+            opacity: 0.3;
+        }
+    }
+
+    &:focus-visible {
+        outline: transparent;
+        //f-visible only applied when tabbed to or using assistive tech
+        box-shadow:
+            0 0 0 0.2rem var(--colour-border-focus-inner),
+            0 0 0 0.4rem var(--colour-border-focus-outer);
+    }
+
+    &--selected {
+        border: var(--border-width-thick) solid var(--colour-border-default);
+    }
+}

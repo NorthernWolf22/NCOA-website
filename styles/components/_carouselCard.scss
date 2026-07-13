@@ -1,0 +1,23 @@
+@use "../primatives/" as p;
+
+//carousel card styles
+
+.carouselCardComponent {
+    height: 100%;
+    border-radius: var(--border-radius-medium);
+    
+    &__image-wrapper {
+        position: relative;
+        height: p.$spacing-1560;
+        background: linear-gradient(to bottom,
+                #807D874D 0%,
+                #EAECEFFF 80%);
+                border-radius: var(--border-radius-medium);
+    }
+    
+    &__image {
+        object-position: center;
+        object-fit: cover;
+        border-radius: var(--border-radius-medium);
+    }
+}

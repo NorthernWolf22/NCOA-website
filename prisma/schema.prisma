@@ -1,0 +1,141 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
+}
+
+model Links {
+  id                Int         @id @default(autoincrement())
+  section           String?
+  slug              String      
+  columnTitle       String?
+  columnTitleLink   Boolean?
+  columnTitleUrl    String?
+  items             LinkItem[]
+}
+
+model LinkItem {
+  id          Int         @id @default(autoincrement())
+  linkLabel   String
+  linkUrl     String
+  linkOrder   Int
+  linkId      Int
+  links       Links       @relation(fields: [linkId], references: [id])
+}
+
+enum ArticleCategory {
+  STORIES
+  EVENTS
+  LEARN
+  COURSES
+}
+
+model NewsArticle {
+  id                Int              @id @default(autoincrement())
+  articleTitle      String
+  articleText       String
+  articleImage      String           
+  articleCreateDate DateTime         @default(now())
+  articleAuthor     String
+  articleCategory   ArticleCategory
+}
+
+
+model Accordion {
+  id         Int          @id @default(autoincrement())
+  slug       String       @unique  
+  title      String                 
+  titleLight String
+  items      AccordionItem[]
+}
+
+model AccordionItem {
+  id                   Int        @id @default(autoincrement())
+  accordionlabel       String
+  accordionContent     String
+  accordionOrder       Int
+  accordionId          Int
+  accordion            Accordion  @relation(fields: [accordionId], references: [id])
+
+  @@unique([accordionId, accordionOrder])
+}
+
+
+model FiftyFifty {
+  id                     Int        @id @default(autoincrement())
+  slug                   String     @unique
+  fiftyHeading           String
+  fiftyHeadingLight      String
+  fiftyText              String
+  fiftyImagePrimary      String
+  fiftyImagePrimaryAlt   String
+  fiftyImageSecondary    String?
+  fiftyImageSecondaryAlt String?
+  fiftyButtonUrl         String?
+  fiftyButtonLabel       String?
+}
+
+model Carousel {
+  id           Int          @id @default(autoincrement())
+  slug         String       @unique  
+  heading      String                 
+  headingLight String?
+  items        CarouselItems[]
+}
+
+model CarouselItems {
+  id                  Int        @id @default(autoincrement())
+  carouselImage       String
+  carouselImageAlt    String
+  carouselTitle       String
+  carouselSubTitle    String
+  carouselOrder       Int
+  carouselId          Int
+  carousel            Carousel  @relation(fields: [carouselId], references: [id])
+
+  @@unique([carouselId, carouselOrder])
+}
+
+model BlocksItem {
+  id                     Int        @id @default(autoincrement())
+  slug                   String     @unique
+  blockHeading           String
+  blockHeadingLight      String
+  blockText              String
+  blockImagePrimary      String
+  blockImagePrimaryAlt   String
+  blockImageSecondary    String
+  blockImageSecondaryAlt String
+  blockImageTertiary  String
+  blockImageTertiaryAlt String
+  blockButtonUrl         String
+  blockButtonLabel       String
+}
+
+enum EnquiryType {
+  GENERAL_ENQUIRY
+  ONE_TO_ONE_COACHING
+  BEGINNERS_COURSE
+}
+
+model ContactForm {
+  id                     Int        @id @default(autoincrement())
+  fullName               String
+  email                  String
+  message                String?
+  enquiryType            EnquiryType?
+}

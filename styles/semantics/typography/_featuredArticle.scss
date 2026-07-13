@@ -1,0 +1,11 @@
+@use '../../primatives/' as p;
+
+/* Feature article semantic tokens (CSS variables)*/
+
+:root {
+  --feat-article-heading-font: #{p.$font-size-400};
+  --feat-article-heading-line: #{p.$line-height-300};    
+
+  --feat-article-body-font-large: #{p.$font-size-300};
+  --feat-article-body-line-large: #{p.$line-height-200};
+}

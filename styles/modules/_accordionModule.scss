@@ -1,0 +1,20 @@
+@use '../primatives/' as p;
+
+//accordion module styles
+
+.accordionModule {
+    padding: var(--module-padd-y-medium) 0;
+
+    .acc-cont {
+        padding: p.$spacing-100;
+        margin-top: p.$spacing-600;
+    }
+}
+
+@media (min-width: #{p.$bp-medium}) {
+    .accordionModule {
+        &__inner {
+            flex-direction: row;
+        }
+    }
+}

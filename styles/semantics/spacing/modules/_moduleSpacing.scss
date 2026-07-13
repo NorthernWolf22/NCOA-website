@@ -1,0 +1,19 @@
+@use '../../../primatives/' as p;
+
+//semantic module spacing variables
+
+:root{
+    --module-padd-y-small: #{p.$spacing-650};
+    --module-padd-y-medium: #{p.$spacing-900};
+    --module-padd-y-large: #{p.$spacing-1100};
+} 
+
+/* Responsive overrides */
+
+@media (min-width: #{p.$bp-medium}) {
+    :root {
+        --module-padd-y-small: #{p.$spacing-800};
+        --module-padd-y-medium: #{p.$spacing-1200};
+        --module-padd-y-large: #{p.$spacing-1500};
+    }
+}

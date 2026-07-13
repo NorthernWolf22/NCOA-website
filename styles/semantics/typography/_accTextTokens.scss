@@ -1,0 +1,23 @@
+@use '../../primatives/' as p;
+
+/* Accordion semantic tokens (CSS variables)*/
+
+:root {
+  --acc-large-font: #{p.$font-size-400};
+  --acc-large-line: #{p.$line-height-200};
+}
+
+/* Responsive overrides */
+@media (min-width: #{p.$bp-medium}) {
+  :root {
+    --acc-large-font: #{p.$font-size-500};
+    --acc-large-line: #{p.$line-height-300};
+  }
+}
+
+@media (min-width: #{p.$bp-large}) {
+  :root {
+    --acc-large-font: #{p.$font-size-550};
+    --acc-large-line: #{p.$line-height-400};
+  }
+}

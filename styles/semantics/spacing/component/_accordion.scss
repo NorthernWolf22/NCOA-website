@@ -1,0 +1,29 @@
+@use '../../../primatives/' as p;
+
+//semantic accordion spacing variables
+
+:root {
+    /*acc button padding*/
+    --acc-btn-padding-left: #{p.$spacing-300};
+    --acc-btn-padding-right: #{p.$spacing-725};
+    --acc-btn-padding-top: #{p.$spacing-450};
+    --acc-btn-padding-bottom: #{p.$spacing-450};
+
+    --acc-btn-icon-to-text-gap: #{p.$spacing-400};
+
+    /*acc content padding*/
+    --acc-content-padding-left: #{p.$spacing-300};
+    --acc-content-padding-right: #{p.$spacing-750};
+    --acc-content-padding-bottom: #{p.$spacing-450};
+    --acc-content-padding-left-extra: #{p.$spacing-750};
+}
+
+/* Responsive overrides */
+
+@media (min-width: #{p.$bp-medium}) {
+    :root {
+        /*acc button padding*/
+        --acc-btn-padding-top: #{p.$spacing-650};
+        --acc-btn-padding-bottom: #{p.$spacing-650};
+    }
+}

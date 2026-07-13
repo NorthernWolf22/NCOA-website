@@ -1,0 +1,19 @@
+@use '../../primatives/' as p;
+
+/* Text semantic tokens */
+
+:root {
+  --colour-text-default: #{p.$neutral-900};
+  --colour-text-inverse: #{p.$neutral-100};
+
+  --colour-text-subtle: #{p.$neutral-700};
+
+  --colour-text-disabled: #{p.$neutral-500};
+  --colour-text-disabled-inverse: #{p.$neutral-100};
+
+  --colour-text-accent-strong: #{p.$brand-900};
+  --colour-text-accent-stronger: #{p.$neutral-800}; //new dark
+
+  --colour-text-warning: #{p.$warning-900};
+  --colour-text-danger: #{p.$danger-900};
+}

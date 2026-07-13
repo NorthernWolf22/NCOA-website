@@ -1,0 +1,69 @@
+@use "../primatives/" as p;
+
+//article module styles
+
+.articleModule {
+    padding: 0 0 var(--module-padd-y-medium) 0;
+
+    &__category {
+        position: absolute;
+        padding: p.$spacing-300 p.$spacing-750;
+        font-size: p.$font-size-300;
+        line-height: p.$line-height-300;
+        font-weight: 600;
+        color: var(--colour-text-inverse);
+        top: -96px;
+        text-transform: uppercase;
+    }
+
+    &__block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: p.$spacing-450 0 p.$spacing-700 0;
+
+        &-author {
+            font-size: var(--body-font-small);
+            line-height: var(--body-line-small);
+
+        }
+
+        &-date {
+            font-size: var(--body-font-small);
+            line-height: var(--body-line-small);
+        }
+    }
+
+    &__main {
+        margin-top: p.$spacing-1000;
+        position: relative;
+    }
+
+    &__heading {
+        margin-bottom: p.$spacing-500;
+    }
+
+    .button {
+        margin-top: p.$spacing-600;
+    }
+
+    .side-panel {
+        margin-top: p.$spacing-900;
+
+        &__heading {
+            font-size: var(--feat-article-heading-font);
+            line-height: var(--feat-article-heading-line);
+            text-transform: uppercase;
+            margin-bottom: p.$spacing-600;
+        }
+    }
+}
+
+
+@media (min-width: #{p.$bp-small}) {
+    .articleModule {
+        .side-panel {
+            margin-top: p.$spacing-1450;
+        }
+    }
+}

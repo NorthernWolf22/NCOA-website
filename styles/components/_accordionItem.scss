@@ -1,0 +1,92 @@
+@use "../primatives/" as p;
+
+//accordion item styles
+
+
+.accItem {
+    margin-bottom: p.$spacing-100;
+    border-bottom: 0.1rem solid var(--colour-divider-strong);
+
+    &__icon {
+        margin-right: p.$spacing-500;
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        border: none;
+        font-size: var(--acc-large-font);
+        line-height: var(--acc-large-line);
+        padding-left: var(--acc-btn-padding-left);
+        padding-right: var(--acc-btn-padding-right);
+        padding-top: var(--acc-btn-padding-top);
+        padding-bottom: var(--acc-btn-padding-bottom);
+        width: 100%;
+        text-align: left;
+        background-color: transparent;
+        cursor: pointer;
+        position: relative;
+
+        &:hover {
+            span {
+                color: var(--colour-text-accent-strong);
+            }
+        }
+
+        &:focus-visible {
+            outline: transparent; //removes the blue default ring
+            border: var(--border-width-thin) solid var(--colour-border-default);
+        }
+    }
+
+    &__content {
+        font-size: var(--body-font);
+        line-height: var(--body-line);
+        padding-left: var(--acc-content-padding-left);
+        padding-right: var(--acc-content-padding-right);
+        padding-bottom: var(--acc-content-padding-bottom);
+    }
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    &__control {
+        position: absolute;
+        top: calc(50% - 16px);
+        right: 2rem;
+        transform: translate-y(calc(-50% - 16px));
+        color: var(--colour-icon-muted);
+
+        &--minus {
+            display: none;
+        }
+    }
+
+    &--icon {
+        &>.accItem__button {
+            //the chevron selector is a combinator, targeting only direct child selector rather than any .accItem__button spans regardless of how deep they are nested.
+
+            span {
+                margin-left: var(--acc-btn-icon-to-text-gap);
+                max-width: 514px;
+                display: inline-block;
+                flex: 1 1 auto; //Because the icon is set to fixed width, this permits text to take up remaining space
+            }
+        }
+
+        &>.accItem__content {
+            padding-left: var(--acc-content-padding-left-extra);
+        }
+    }
+
+    &--open {
+        .accItem__control--plus {
+            display: none;
+        }
+
+        .accItem__control--minus {
+            display: block;
+        }
+    }
+}

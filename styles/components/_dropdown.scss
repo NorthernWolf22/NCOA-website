@@ -1,0 +1,71 @@
+@use "../primatives/" as p;
+
+//dropdown styles
+
+.dropdown {
+    display: inline-block;
+    width: fit-content;
+    position: relative;
+
+    &__button {
+        display: block;
+        width: 100%;
+        text-align: left;
+        border: var(--border-width-thick) solid var(--colour-border-default);
+        background-color: var(--colour-background-inverse);
+        padding: p.$spacing-200 p.$spacing-400 p.$spacing-200 p.$spacing-400;
+        min-width: p.$spacing-1560;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        outline: transparent; //removes the blue default ring
+
+        &:focus-visible {
+            //f-visible only applied when tabbed to or using assistive tech
+            box-shadow:
+                0 0 0 0.2rem var(--colour-border-focus-inner),
+                0 0 0 0.4rem var(--colour-border-focus-outer);
+        }
+    }
+
+    &__panel {
+        display: none;
+        position: absolute;
+        bottom: -158px;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+        border-left: var(--border-width-thick) solid var(--colour-border-accent-strong);
+        border-right: var(--border-width-thick) solid var(--colour-border-accent-strong);
+        border-bottom: var(--border-width-thick) solid var(--colour-border-accent-strong);
+
+        &--isOpen {
+            display: block;
+        }
+    }
+
+    &__option {
+        display: block;
+        width: 100%;
+        text-align: left;
+        background-color: var(--colour-background-inverse);
+        border: none;
+        padding: p.$spacing-200 p.$spacing-400 p.$spacing-200 p.$spacing-400;
+        outline: transparent; //removes the blue default ring
+
+        &:hover {
+            background-color: var(--colour-background-accent-light);
+        }
+
+        &:focus-visible {
+            background-color: var(--colour-background-accent-light);
+        }
+    }
+}
+
+
+@media (min-width: #{p.$bp-small}) {
+    .dropdown {
+        &__panel {}
+    }
+}

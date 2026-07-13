@@ -1,0 +1,128 @@
+@use "../primatives/" as p;
+
+//single input styles
+label {
+    font-size: var(--form-label-font);
+    line-height: var(--form-label-line);
+}
+
+.input {
+    border: 0.1rem solid var(--colour-border-muted);
+    padding: var(--form-input-padding-y) var(--form-input-padding-x);
+    margin-top: var(--form-label-to-input-gap);
+    display: block;
+    width: 100%;
+    height: auto;
+
+    &::placeholder {
+        font-size: var(--form-label-small-font);
+        line-height: var(--font-label-small-line);
+        color: var(--colour-text-subtle);
+    }
+
+    &:focus-visible {
+        outline: transparent;
+        //f-visible only applied when tabbed to or using assistive tech
+        box-shadow:
+            0 0 0 0.2rem var(--colour-border-focus-inner),
+            0 0 0 0.4rem var(--colour-border-focus-outer);
+    }
+
+    &:hover {
+        border-color: var(--colour-border-accent-strong);
+    }
+}
+
+.input__wrapper {
+    margin-bottom: p.$spacing-600;
+}
+
+.input__wrapper {    
+    &--error {
+        
+        .input__message {
+            margin-top: var(--form-input-to-feedback-gap);
+            color: var(--colour-text-danger);
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            
+            .icon {
+                margin-right: p.$spacing-200;
+                display: inline-block;//IS THIS STILL REQUIRED> CHECK?
+
+                svg {
+                    color: var(--colour-icon-danger);
+                }
+            }
+
+            p {
+                font-size: var(--form-label-small-font);
+                line-height: var(--form-label-small-line);
+                margin: 0;
+            }
+        }
+
+        .input {
+            border-color: var(--colour-border-danger);
+            background-color: var(--colour-background-danger);
+
+            &::placeholder {
+                color: var(--colour-text-danger);
+            }
+        }
+
+        .textarea {
+            border-color: var(--colour-border-danger);
+            background-color: var(--colour-background-danger);
+
+            &::placeholder {
+                color: var(--colour-text-danger);
+            }            
+        }
+    }
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .input__wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+}
+
+legend {
+    padding: 0;
+    width: 100%;
+    margin-bottom: var(--form-label-to-input-gap);
+}
+
+.input[type="radio"] {
+    display: inline-block;
+    width: unset;
+    height: unset;
+    margin: unset;
+    margin-left: p.$spacing-400;
+}
+
+@media (min-width: #{p.$bp-small}) {
+    fieldset {
+        flex-direction: row;
+        align-items: center;
+
+        .input__wrapper {
+            display: block;
+            width: unset;
+        }
+    }
+}

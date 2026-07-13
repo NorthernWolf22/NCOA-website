@@ -1,0 +1,7 @@
+@use "../../../primatives/" as p;
+
+//semantic component spacing variables
+
+:root {
+    --header-padding-y: #{p.$spacing-400};
+}

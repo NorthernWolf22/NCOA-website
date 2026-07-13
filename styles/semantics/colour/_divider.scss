@@ -1,0 +1,8 @@
+@use '../../primatives/' as p;
+
+/* Divider semantic tokens */
+
+:root {
+  --colour-divider-default: #{p.$neutral-300};
+  --colour-divider-strong: #{p.$neutral-500};
+}

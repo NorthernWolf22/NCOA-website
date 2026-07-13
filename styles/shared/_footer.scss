@@ -1,0 +1,118 @@
+@use "../primatives/" as p;
+
+/*footer module styles*/
+
+.footerModule {
+    padding: var(--module-padd-y-small) 0;
+
+    .grid>div:first-child {
+        //hide columns on mobile
+        display: none;
+    }
+
+    &__leftBlock {
+        .nav {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .navColumn {
+            a {
+                display: block;
+            }
+        }
+
+        .nav >.navColumn +.navColumn {
+            //apply margin to all columns except the first
+            margin-left: p.$spacing-1400;
+        }
+    }
+
+    &__rightBlock {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        p {
+            max-width: p.$spacing-1400;
+        }
+    }
+
+    &__bottomBlock {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: flex-start;
+        border-top: var(--border-width-thick) solid var(--colour-divider-default);
+        padding: p.$spacing-500 0 p.$spacing-500 0;
+
+        p {
+            color: var(--colour-text-subtle);
+        }
+
+        &-links {
+            width: 100%;
+            .navColumn {
+                display: flex;
+                justify-content: space-between;
+            }
+            .link {
+                +.link {
+                    padding-left: p.$spacing-400;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: #{p.$bp-small}) {
+    .footerModule {
+        .grid>div:first-child {
+            display: block;
+        }
+
+        &__leftBlock {
+            .nav >.navColumn + .navColumn {
+                //apply margin to all columns except the first
+                margin-left: p.$spacing-600;
+            }
+        }
+
+        &__rightBlock {
+            float: right;
+            display: block;
+        }
+
+        &__bottomBlock {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            &-links {
+                width: unset;
+            }
+        }
+    }
+}
+
+@media (min-width: #{p.$bp-medium}) {
+    .footerModule {
+        &__leftBlock {
+            .nav >.navColumn +.navColumn {
+                //apply margin to all columns except the first
+                margin-left: p.$spacing-900;
+            }
+        }
+    }
+}
+
+@media (min-width: #{p.$bp-large}) {
+    .footerModule {
+        &__leftBlock {
+            .nav >.navColumn +.navColumn {
+                //apply margin to all columns except the first
+                margin-left: p.$spacing-1400;
+            }
+        }
+    }
+}

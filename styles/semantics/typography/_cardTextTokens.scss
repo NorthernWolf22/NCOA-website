@@ -1,0 +1,27 @@
+@use '../../primatives/' as p;
+
+/* Card label semantic tokens (CSS variables */
+
+:root {
+  /* Regular card label */
+  --card-label-font: #{p.$font-size-500};
+  --card-label-line: #{p.$line-height-400};
+
+  /* Small card label */
+  --card-label-small-font: #{p.$font-size-200};
+  --card-label-small-line: #{p.$line-height-100};
+}
+
+/* Responsive overrides */
+
+@media (min-width: #{p.$bp-medium}) {
+  :root {
+    /* Regular card label */
+    --card-label-font: #{p.$font-size-500};
+    --card-label-line: #{p.$line-height-400};
+
+    /* Small card label */
+    --card-label-small-font: #{p.$font-size-200};
+    --card-label-small-line: #{p.$line-height-100};
+  }
+}

@@ -1,0 +1,115 @@
+@use "../primatives/" as p;
+
+//blocks with text styles
+
+.blocksWithTextModule {
+    padding: var(--module-padd-y-medium) 0;
+
+    &__image-wrapper {
+        position: relative;
+        height: p.$spacing-1625;
+    }
+
+    &__image {
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__topBlock {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .blocks {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+
+        &__topBlock {
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        &__bottomBlock {
+            display: flex;
+            flex-direction: row;
+            height: 284px;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        &__image-wrapper {
+            position: relative;
+            // width: 50%;
+        }
+
+        //target first image
+        &__image-wrapper:nth-child(1) {
+            width: calc(50% - p.$spacing-200);
+        }
+
+        //target second image
+        &__image-wrapper:nth-child(2) {
+            width: calc(50% - p.$spacing-200);
+        }
+
+        &__image {
+            object-fit: cover;
+            object-position: center;
+        }
+
+    }
+
+    .button {
+        float: right;
+    }
+}
+
+@media (min-width: #{p.$bp-small}) {
+    .blocksWithTextModule {
+        &__image-wrapper {
+            height: p.$spacing-1650;
+        }
+    }
+}
+
+
+@media (min-width: #{p.$bp-medium}) {
+    .blocksWithTextModule {
+        .blocks {
+
+            //target first image
+            &__image-wrapper:nth-child(1) {
+                width: calc(30% - p.$spacing-200);
+            }
+
+            //target second image
+            &__image-wrapper:nth-child(2) {
+                width: calc(70% - p.$spacing-200);
+            }
+        }
+    }
+}
+
+@media (min-width: #{p.$bp-x-large}) {
+    .blocksWithTextModule {
+        .blocks {
+
+            //target first image
+            &__image-wrapper:nth-child(1) {
+                width: 304px;
+            }
+
+            //target second image
+            &__image-wrapper:nth-child(2) {
+                width: 413px;
+            }
+        }
+    }
+}

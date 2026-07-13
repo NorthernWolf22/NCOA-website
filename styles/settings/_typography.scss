@@ -1,0 +1,102 @@
+@use '../primatives/' as p;
+
+* {
+    font-family: p.$font-family-base;
+}
+
+
+//Headings
+.h1,
+.h2,
+.h3,
+.h4, 
+.h5 {
+    font-family: p.$font-family-heading;
+    font-weight: 400;
+}
+
+.h1 {
+    font-size: var(--h1-font);
+    line-height: var(--h1-line);
+}
+
+.h2 {
+    font-size: var(--h2-font);
+    line-height: var(--h2-line);
+}
+
+.h3 {
+    font-size: var(--h3-font);
+    line-height: var(--h3-line);
+}
+
+.h4 {
+    font-size: var(--h4-font);
+    line-height: var(--h4-line);
+}
+
+.h5 {
+    font-size: var(--h5-font);
+    line-height: var(--h5-line);
+}
+
+
+//body text
+.body, .body--heavy, .body--small, .body--small-heavy, .body--large {
+    font-family: p.$font-family-base;
+}
+
+.body {
+    font-family: p.$font-family-base;
+    font-size: var(--body-font);
+    line-height: var(--body-line);
+    font-weight: 400;
+
+    &--heavy {
+        font-size: var(--body-font-heavy);
+        line-height: var(--body-line-heavy);
+        font-weight: 600;
+    }
+
+    &--small {
+        font-size: var(--body-font-small);
+        line-height: var(--body-line-small);
+    }
+
+    &--small-heavy {
+        font-size: var(--body-font-small-heavy);
+        line-height: var(--body-line-small-heavy);
+        font-weight: 600;
+    }
+
+    &--medium {
+        font-size: var(--body-font-medium);
+        line-height: var(--body-line-medium);
+    }
+
+    &--medium-heavy {
+        font-size: var(--body-font-medium);
+        line-height: var(--body-line-medium);
+        font-weight: 600;
+    }
+
+    &--large {
+        font-size: var(--body-font-large);
+        line-height: var(--body-line-large);
+    }
+
+    &--coloured {
+        color: var(--colour-text-accent-strong);
+    }
+
+}
+
+//center text
+.center {
+    text-align: center;
+}
+
+//Breakpoint  
+@media (min-width: #{p.$bp-medium}) {
+//????????
+}

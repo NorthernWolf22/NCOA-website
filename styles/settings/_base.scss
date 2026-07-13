@@ -1,0 +1,29 @@
+@use '../primatives' as p;
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    margin-inline: auto;
+    padding-inline: 16px;    /* prevents edge hugging on small screens */
+}
+
+a {
+    text-decoration: underline;
+    color: var(--colour-text-default);
+
+    &:hover {
+        text-decoration: none;
+    }
+}

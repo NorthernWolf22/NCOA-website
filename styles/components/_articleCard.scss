@@ -1,0 +1,42 @@
+@use "../primatives/" as p;
+
+//article card styles
+
+.articleCard {
+    width: 100%;
+
+    &__image-wrapper {
+        position: relative;
+        width: 100%;
+        height: 304px;
+    }
+
+    &__image {
+        display: block;
+        object-fit: cover;
+    }
+
+    &__title {
+        font-size: var(--feat-article-body-font);
+        line-height: var(--feat-article-body-line);
+        padding: p.$spacing-200 0 p.$spacing-200 p.$spacing-200;
+        color: var(--colour-text-default);
+    }
+
+    + .articleCard {
+        margin-top: p.$spacing-500;
+    }
+
+    &:hover {
+        .articleCard__image {
+            filter: grayscale(100%);
+            transition: all 1s;
+        }
+    }
+}
+
+@media (min-width: #{p.$bp-small}) {
+    .articleCard {
+        // ???
+    }
+}

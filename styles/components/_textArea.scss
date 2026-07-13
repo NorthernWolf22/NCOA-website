@@ -1,0 +1,28 @@
+//text area
+textarea {
+    width: 100%;
+    height: auto;
+    resize: none;
+    display: block;
+    padding: var(--form-input-padding-y) var(--form-input-padding-x);
+    margin-top: var(--form-label-to-input-gap);
+    border: 0.1rem solid var(--colour-border-muted);
+
+    &::placeholder {
+        font-size: var(--form-label-small-font);
+        line-height: var(--font-label-small-line);
+        color: var(--colour-text-subtle);
+    }
+
+    &:focus-visible {
+        outline: transparent;
+        //f-visible only applied when tabbed to or using assistive tech
+        box-shadow:
+            0 0 0 0.2rem var(--colour-border-focus-inner),
+            0 0 0 0.4rem var(--colour-border-focus-outer);
+    }
+
+    &:hover {
+        border-color: var(--colour-border-accent-strong);
+    }
+}

@@ -1,0 +1,19 @@
+@use '../../primatives/' as p;
+
+/* Icon semantic tokens */
+
+:root {
+  --colour-icon-default: #{p.$neutral-900};
+  --colour-icon-inverse: #{p.$neutral-100};
+
+  --colour-icon-disabled: #{p.$neutral-500};
+  --colour-icon-disabled-inverse: #{p.$neutral-100};
+
+  --colour-icon-accent-strong: #{p.$brand-900};
+  --colour-icon-accent-stronger: #{p.$neutral-800}; //new dark
+
+  --colour-icon-warning: #{p.$warning-900};
+  --colour-icon-danger: #{p.$danger-900};
+
+  --colour-icon-muted: #{p.$neutral-500};
+}

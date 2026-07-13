@@ -1,0 +1,40 @@
+@use "../primatives/" as p;
+
+//logo component styles
+
+.logo {    
+    border: var(--border-width-thin) solid transparent;
+    padding: 0;
+    color: var(--colour-text-default);
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: p.$spacing-650;
+    line-height: p.$spacing-600;
+
+    span {
+        font-family: 'Italiana', sans-serif;
+    }
+
+    &__image {
+        display: inline-block;
+        margin-right: p.$spacing-450;
+        height: p.$spacing-800;
+        width: auto;
+    }
+
+    &:hover {
+        color: var(--colour-text-accent-strong);
+    }
+
+    &:focus-visible {
+        outline: transparent;
+        //f-visible only applied when tabbed to or using assistive tech
+        box-shadow:
+            0 0 0 0.2rem var(--colour-border-focus-inner),
+            0 0 0 0.4rem var(--colour-border-focus-outer);
+    }
+}

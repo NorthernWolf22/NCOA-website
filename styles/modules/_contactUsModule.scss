@@ -1,0 +1,32 @@
+@use "../primatives/" as p;
+
+//contact us module styles 
+
+.contactUsModule {
+    padding: var(--module-padd-y-medium) 0;
+    background-image: url(../../public/images/logo--grey.svg);
+    background-repeat: repeat;
+    position: relative;
+    background-size: 100px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(to right,
+                #ffffff 0%,
+                #ffffff00 100%);
+
+        height: 100%;
+    }
+
+    &__intro {
+        position: relative;
+    }
+
+    form {
+        position: relative;
+    }
+}

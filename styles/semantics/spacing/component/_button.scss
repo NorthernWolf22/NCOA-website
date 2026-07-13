@@ -1,0 +1,18 @@
+@use '../../../primatives/' as p;
+
+//semantic component spacing variables
+
+:root {
+    --button-padding-y: #{p.$spacing-200};
+    --button-padding-x: #{p.$spacing-650};
+    --button-icon-to-label-gap: #{p.$spacing-300};
+}
+
+/*responsive semantic variables*/
+
+@media (min-width: #{p.$bp-medium}) {
+    :root {
+        --button-padding-y: #{p.$spacing-300};
+        --button-padding-x: #{p.$spacing-700};
+    }
+}

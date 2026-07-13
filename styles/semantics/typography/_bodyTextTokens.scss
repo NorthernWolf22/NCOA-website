@@ -1,0 +1,39 @@
+@use '../../primatives/' as p;
+
+/* Body text semantic tokens (CSS variables), do not use these directly, please apply a body class from the settings/_typography stylesheet*/
+
+:root {
+  /* Regular body */
+  --body-font: #{p.$font-size-200};
+  --body-line: #{p.$line-height-300};
+
+  /* Small body */
+  --body-font-small: #{p.$font-size-200};
+  --body-line-small: #{p.$line-height-100};
+
+  /* Medium body */
+  --body-font-medium: #{p.$font-size-300};
+  --body-line-medium: #{p.$line-height-400};
+
+  /* Large body */
+  --body-font-large: #{p.$font-size-500};
+  --body-line-large: #{p.$line-height-400};
+
+  /* Heavy body */
+  --body-font-heavy: #{p.$font-size-200};
+  --body-line-heavy: #{p.$line-height-300};
+
+  /* Small heavy body */
+  --body-font-small-heavy: #{p.$font-size-200};
+  --body-line-small-heavy: #{p.$line-height-100};
+}
+
+/* Responsive overrides */
+
+@media (min-width: #{p.$bp-medium}) {
+  :root {
+    /* Large body */
+    --body-font-large: #{p.$font-size-550};
+    --body-line-large: #{p.$line-height-450};
+  }
+}

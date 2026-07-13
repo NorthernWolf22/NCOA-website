@@ -1,0 +1,39 @@
+//link component style
+
+.link {
+    font-size: var(--link-font-heavy);
+    line-height: var(--link-line-heavy);
+    font-weight: 400;
+    color: var(--colour-link-default);
+    text-decoration: none;
+    outline: transparent;
+    display: inline-block;
+
+    &:hover {
+        color: var(--colour-text-accent-strong);
+    }
+
+    &:focus-visible {
+        //f-visible only applied when tabbed to or using assistive tech
+        box-shadow:
+            0 0 0 0.2rem var(--colour-border-focus-inner),
+            0 0 0 0.4rem var(--colour-border-focus-outer);
+    }
+
+    &--heavy {
+        font-weight: 700;
+    }
+
+    &--button {
+        border: transparent;
+        padding: 0;
+        background: transparent;
+
+    }
+
+    &--noHover {
+        &:hover {
+            color: var(--colour-text-default);
+        }
+    }
+}

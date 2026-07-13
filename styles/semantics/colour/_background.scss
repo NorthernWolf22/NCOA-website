@@ -1,0 +1,22 @@
+@use '../../primatives/' as p;
+
+/* Background semantic tokens (CSS variables */
+
+:root {
+  --colour-background-default: #{p.$neutral-900}; 
+  --colour-background-inverse: #{p.$neutral-100};
+
+  --colour-background-disabled: #{p.$neutral-500};
+  --colour-background-disabled-inverse: #{p.$neutral-100};
+
+  --colour-background-accent-strong: #{p.$brand-900};
+  --colour-background-accent-stronger: #{p.$neutral-800}; //new dark
+
+  --colour-background-warning: #{p.$warning-100};
+  --colour-background-danger: #{p.$danger-100};
+  
+  --colour-background-selected: #{p.$neutral-900};
+  
+  --colour-background-accent-neutral: #{p.$brand-300};
+  --colour-background-accent-light: #{p.$brand-100};
+}
