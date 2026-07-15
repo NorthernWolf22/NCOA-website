@@ -30,26 +30,44 @@
 ![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?logo=visualstudiocode&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)
 
-
-<h3>Next.js features</h3>
+<h3>Key features</h3>
+<h3>Next.js</h3>
 <ul>
-    <li><p><strong>Example - </strong>lorum ipsum</p></li>
-    <li><p><strong>Example - </strong>lorum ipsum</p></li>
+    <li><p><strong>Custom API route - </strong>Submitted form data via a REST API to a custom server-side api route handler</p></li>
+    <li><p><strong>Client and server side components - </strong>Separated client-side and server-side responsibilities using client and server Components</p></li>
+    <li><p><strong>Dynamic routes - </strong>Utilised dynamic routing to render news articles using the article id as the parameter</p></li>
+    <li><p><strong>Search parameters - </strong>Implemented URL-based filtering using search parameters (?category=...) at server-side in the App Router</p></li>
+    <li><p><strong>Image optimisation - </strong>Utilised Next.js’s built‑in, performance‑optimised image component that automatically handles sizing, formats, lazy loading, and layout stability</p></li>
+    <li><p><strong>Links - </strong>Link is Next.js’s built‑in, performance‑optimised navigation component that gives you fast client‑side routing with automatic prefetching and seamless page transitions</p></li>
+    <li><p><strong>Meta data - </strong>Utilised the metadata object that Next.js uses to populate the HTML title and description tags</p></li>
+    <li><p><strong>Error routes - </strong></p></li>
+    <li><p><strong>Not found routes - </strong></p></li>
+
 </ul>
 
-<h3>Typescript features</h3>
+<h3>Typescript</h3>
 <ul>
-    <li><p><strong>Example - </strong>lorum ipsum</p></li>
-    <li><p><strong>Example - </strong>lorum ipsum</p></li>
+    <li><strong>Type alias - </strong><p>Created and maintained custom TypeScript type aliases using the type keyword</p></li>
+    <li><p><strong>Strongly typed - </strong>Used strongly typed data throughout e.g. useState< ContactFormData></p></li>
+    <li><strong>Prop types - </strong><p>Defined custom prop type aliases within components</p></li>
+    <li><strong>Parameter types - </strong><p>Typed function parameters to enforce the structure of the expected incoming arguments</p></li>
+    <li><strong>Function returns - </strong><p>Explicitly declared function return types e.g. void for improved code clarity and type safety</p></li>
+    <li><strong>Array types - </strong><p>Used array typing (NewsArticle[]) to ensure collections only contain valid news article objects</p></li>
+    <li><strong>Functions as props - </strong><p>Passed typed functions as props between parent and child components</p></li>
+    <li><strong>Type inference - </strong><p>Leveraged TypeScript's type inference for local component state objects</p></li>
+    <li><p><strong>Event handlers - </strong>Typed React event handlers (ChangeEvent, SubmitEvent)</p></li>
+    <li><p><strong>Utility types - </strong>Used utility types (Partial<Record<...>>) for field-level validation errors, this approach ensures the contact form error state type will be automatically updated should there be changes made to the form field schema inferred by zod, they are synchronised</p></li>
+    <li><p><strong>Custom aliases - </strong>Implemented type-safe state management with custom interfaces and type aliases</p></li>
+    <li><p><strong>Using typescripts built in features - </strong>Leveraged TypeScript's keyof operator for dynamic error mapping</p></li>
 </ul>
 
-<h3>React features</h3>
+<h3>React</h3>
 <ul>
   <li><p><strong>Architecture - </strong>Built a component-based application architecture</p></li>
-  <li><p><strong>Hooks - </strong>Managed application data with state hooks</p></li>
+  <li><p><strong>Hooks - </strong>Managed application data with state hooks (useState, useEffect, etc)</p></li>
   <li><p><strong>Controlled inputs - </strong>Implemented controlled form inputs using React state</p></li>
   <li><p><strong>Avoiding state mutation - </strong>Used state immutability patterns when updating arrays and objects</p></li>
-  <li><p><strong>Spread operator - </strong>Added new records to state using the spread operator</p></li>
+  <li><p><strong>Spread operator - </strong>Amended state or passed props using the spread operator</p></li>
   <li><p><strong>Array methods - </strong>Filtered the article categories using the Array.filter() method and rendered dynamic data by using the .map() method</p></li>
   <li><p><strong>Callback props - </strong>Used callback props to allow child components to trigger parent state updates</p></li>
   <li><p><strong>Reusable components - </strong>Built reusable components like form and button</p></li>
@@ -61,11 +79,16 @@
 
 <h3>Zod</h3>
 <ul>
-    <li><p><strong>Example - </strong>lorum ipsum</p></li>
-    <li><p><strong>Example - </strong>lorum ipsum</p></li>
+    <li><p><strong>Schema - </strong>Defined a strongly typed validation schema for the contact form</p></li>
+    <li><p><strong>Inferance - </strong>Generated TypeScript types directly from the validation schema</p></li>
+    <li><p><strong>String validation - </strong>Applied string validation (min, max, trim, email)</p></li>
+    <li><p><strong>Enums - </strong>Validated enum values for predefined enquiry types</p></li>
+    <li><p><strong>Cross-field validation - </strong>Implemented conditional cross-field validation using superRefine()</p></li>
+    <li><p><strong>Runtime validation - </strong>Used safeParse() to perform runtime validation without throwing exceptions</p></li>
+    <li><p><strong>Transforming data - </strong>Transforming the issues returned from zod, converting them in to a format easier to access in the UI to validate form field errors</p></li>
 </ul>
 
-<h3>Prisma ORM</h3>
+<h3>Prisma ORM & PostgreSQL</h3>
 <ul>
     <li><p><strong>Relational - </strong>Designed and implemented a relational database schema using Prisma ORM</p></li>
     <li><p><strong>1 to 1 relationships - </strong>Creating one-to-many relationships between database models e.g. Accordion and accordion items</p></li>
@@ -78,13 +101,13 @@
     <li><p><strong>Default values - </strong>Configuring default values (e.g. @default(now()) for timestamps and autoincrement() for IDs)</p></li>
     <li><p><strong>Ordered content - </strong>Modelling ordered collections of data using explicit ordering fields (linkOrder, accordionOrder, carouselOrder)</p></li>
     <li><p><strong>Normalised database design - </strong>Applied database normalization principles to reduce data duplication and create reusable content structures</p></li>
+    <li><p><strong>Database queries - </strong>Queried a PostgreSQL database using Prisma ORM</p></li>
+    <li><p><strong>DRY principles - </strong>Configured a reusable PrismaClient instance to avoid repeated client creation</p></li>
+    <li><p><strong>PostgreSQL adapter - </strong>Connected Prisma to PostgreSQL using the Prisma PostgreSQL adapter (@prisma/adapter-pg)</p></li>
+    <li><p><strong>Prisma query options - </strong>Used Prisma query options (orderBy) to retrieve sorted data</p></li>
+    <li><p><strong>Prisma types - </strong>Utilised Prisma-generated TypeScript types for end-to-end type safety</p></li>
 </ul>
 
-<h3>PostgreSQL</h3>
-<ul>
-    <li><p><strong>Example - </strong>lorum ipsum</p></li>
-    <li><p><strong>Example - </strong>lorum ipsum</p></li>
-</ul>
 
 <h3>Project structure</h3>
 <p>The project structure highlights the architectural approach, folder organisation, and naming conventions that support a scalable and maintainable codebase.</p>
