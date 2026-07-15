@@ -47,14 +47,14 @@
 
 <h3>Typescript</h3>
 <ul>
-    <li><strong>Type alias - </strong><p>Created and maintained custom TypeScript type aliases using the type keyword</p></li>
+    <li><p><strong>Type alias - </strong>Created and maintained custom TypeScript type aliases using the type keyword</p></li>
     <li><p><strong>Strongly typed - </strong>Used strongly typed data throughout e.g. useState< ContactFormData></p></li>
-    <li><strong>Prop types - </strong><p>Defined custom prop type aliases within components</p></li>
-    <li><strong>Parameter types - </strong><p>Typed function parameters to enforce the structure of the expected incoming arguments</p></li>
-    <li><strong>Function returns - </strong><p>Explicitly declared function return types e.g. void for improved code clarity and type safety</p></li>
-    <li><strong>Array types - </strong><p>Used array typing (NewsArticle[]) to ensure collections only contain valid news article objects</p></li>
-    <li><strong>Functions as props - </strong><p>Passed typed functions as props between parent and child components</p></li>
-    <li><strong>Type inference - </strong><p>Leveraged TypeScript's type inference for local component state objects</p></li>
+    <li><p><strong>Prop types - </strong>Defined custom prop type aliases within components</p></li>
+    <li><p><strong>Parameter types - </strong>Typed function parameters to enforce the structure of the expected incoming arguments</p></li>
+    <li><p><strong>Function returns - </strong>Explicitly declared function return types e.g. void for improved code clarity and type safety</p></li>
+    <li><p><strong>Array types - </strong>Used array typing (NewsArticle[]) to ensure collections only contain valid news article objects</p></li>
+    <li><p><strong>Functions as props - </strong>Passed typed functions as props between parent and child components</p></li>
+    <li><p><strong>Type inference - </strong>Leveraged TypeScript's type inference for local component state objects</p></li>
     <li><p><strong>Event handlers - </strong>Typed React event handlers (ChangeEvent, SubmitEvent)</p></li>
     <li><p><strong>Utility types - </strong>Used utility types (Partial<Record<...>>) for field-level validation errors, this approach ensures the contact form error state type will be automatically updated should there be changes made to the form field schema inferred by zod, they are synchronised</p></li>
     <li><p><strong>Custom aliases - </strong>Implemented type-safe state management with custom interfaces and type aliases</p></li>
@@ -214,6 +214,13 @@
                 modules
                 <ul>
                     <li>AccordionModule.tsx</li>
+                    <li>...</li>
+                </ul>
+            </li>
+            <li>
+                utils
+                <ul>
+                    <li>formatDate.ts</li>
                     <li>...</li>
                 </ul>
             </li>
