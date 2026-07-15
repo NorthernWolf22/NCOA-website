@@ -1,5 +1,5 @@
 import { NewsArticle } from "@/generated/prisma/client";
-import { setCategoryColour } from "@/services/setCategoryColour";
+import { setCategoryColour } from "@/utils/setCategoryColour";
 import Image from "next/image";
 import Link from "next/link";
 import LinkComponent from "./LinkComponent";

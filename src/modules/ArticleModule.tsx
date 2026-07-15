@@ -1,6 +1,6 @@
 //services & types
 import { NewsArticle } from "@/generated/prisma/client";
-import { setCategoryColour } from "@/services/setCategoryColour";
+import { setCategoryColour } from "@/utils/setCategoryColour";
 import { formatArticleDate } from "@/utils/formatDate";
 
 //components
