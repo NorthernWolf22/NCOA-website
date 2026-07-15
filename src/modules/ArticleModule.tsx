@@ -1,7 +1,7 @@
 //services & types
 import { NewsArticle } from "@/generated/prisma/client";
 import { setCategoryColour } from "@/services/setCategoryColour";
-import { formatArticleDate } from "@/services/formatDate";
+import { formatArticleDate } from "@/utils/formatDate";
 
 //components
 import { MDXRemote } from "next-mdx-remote/rsc";
