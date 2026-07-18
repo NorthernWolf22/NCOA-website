@@ -23,10 +23,6 @@ async function AboutUsPage() {
     if (!accordion) {
         notFound();
     }
-    
-    if(!fiftyFifty) {
-        notFound();
-    }
 
     return (
         <>
@@ -36,15 +32,10 @@ async function AboutUsPage() {
                 bannerImageAlt="two archers"
             />
             <FiftyFiftyModule
-                fiftyHeading={fiftyFifty?.fiftyHeading}
-                fiftyHeadingLight={fiftyFifty?.fiftyHeadingLight}
-                fiftyText={fiftyFifty?.fiftyText}
-                fiftyImagePrimary={fiftyFifty?.fiftyImagePrimary}
-                fiftyImagePrimaryAlt={fiftyFifty?.fiftyImagePrimaryAlt}
-                fiftyImageSecondary={fiftyFifty?.fiftyImageSecondary}
-                fiftyImageSecondaryAlt={fiftyFifty?.fiftyImageSecondaryAlt}
-                portraitImage                
+                fiftyFifty={fiftyFifty}
+                portraitImage         
             />
+
             <CarouselModule 
                 carousel={carousel}
             />

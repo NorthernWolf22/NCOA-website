@@ -1,7 +1,7 @@
 type SectionHeadingProps = {
     sectionSubHeading: string;
     sectionHeading: string;
-    sectionHeadingLight: string | null;
+    sectionHeadingLight: string;
 };
 
 function SectionHeadingComponent({sectionSubHeading, sectionHeading, sectionHeadingLight}: SectionHeadingProps) {
