@@ -7,7 +7,7 @@ import { notFound } from "next/navigation";
 import { getLinks } from "@/services/getLinks";
 
 //components
-import HeaderComponent from "@/components/HeaderComponent";
+import HeaderComponent from "@/modules/HeaderModule";
 import FooterModule from "@/modules/FooterModule";
 
 const montserrat = Montserrat({ //body

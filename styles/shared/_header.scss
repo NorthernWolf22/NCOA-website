@@ -2,7 +2,7 @@
 
 //header module styles
 
-.headerComponent {
+.headerModule {
     padding: var(--header-padding-y) 0;
 
     &__inner {
@@ -39,7 +39,7 @@
     &--isOpen {
         background-color: var(--colour-background-inverse);
 
-        .headerComponent__links {
+        .headerModule__links {
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
@@ -60,7 +60,7 @@
                 }
             }
 
-            .headerComponent__block {
+            .headerModule__block {
                 width: 100%;
                 display: flex;
                 flex-wrap: wrap;
@@ -86,7 +86,7 @@
 }
 
 @media (min-width: #{p.$bp-large}) {
-    .headerComponent {
+    .headerModule {
         &__inner-menu {
             display: none!important;
         }

@@ -4,25 +4,25 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 //types & services
-import { ModalComponentState } from "./modal/ModalComponent.types";
+import { ModalComponentState } from "../components/modal/ModalComponent.types";
 import { Links, LinkItem } from "@/generated/prisma/client";
 
 //components
-import LogoComponent from "./LogoComponent";
-import LinkComponent from "./LinkComponent";
-import ButtonComponent from "./ButtonComponent";
-import ModalComponent from "./modal/ModalComponent";
-import IconComponent from "./IconComponent";
+import LogoComponent from "../components/LogoComponent";
+import LinkComponent from "../components/LinkComponent";
+import ButtonComponent from "../components/ButtonComponent";
+import ModalComponent from "../components/modal/ModalComponent";
+import IconComponent from "../components/IconComponent";
 
 //images & icons
 import logo from "../../public/images/logo.svg";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-type HeadComponentProps = {
+type HeaderModuleProps = {
     links: (Links & { items: LinkItem[] })[];
 };
 
-function HeaderComponent({ links }: HeadComponentProps) {
+function HeaderModule({ links }: HeaderModuleProps) {
     const pathname = usePathname();
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [modal, setModal] =useState<ModalComponentState>({
@@ -67,9 +67,9 @@ function HeaderComponent({ links }: HeadComponentProps) {
 
     return (
         <>
-            <header className={isNavOpen ? "headerComponent headerComponent--isOpen" : "headerComponent"}>
+            <header className={isNavOpen ? "headerModule headerModule--isOpen" : "headerModule"}>
                 <div className="container">
-                    <div className="headerComponent__inner">
+                    <div className="headerModule__inner">
                         <LogoComponent
                             logoImage={logo}
                             logoImageAlt="Geometric logo shape"
@@ -81,10 +81,10 @@ function HeaderComponent({ links }: HeadComponentProps) {
                             iconSize="large"
                             variant="primary"
                             onClick={toggleMenu}
-                            className="headerComponent__inner-menu"
+                            className="headerModule__inner-menu"
                         />
 
-                        <div id="header-links" className="headerComponent__links">
+                        <div id="header-links" className="headerModule__links">
                             <nav className="nav">
                                 {
                                     links?.map((column) => (
@@ -104,7 +104,7 @@ function HeaderComponent({ links }: HeadComponentProps) {
                                     ))
                                 }
                             </nav>
-                            <div className="headerComponent__block">
+                            <div className="headerModule__block">
                                 <LinkComponent
                                     linkType="button"
                                     onClick={toggleModal}
@@ -131,4 +131,4 @@ function HeaderComponent({ links }: HeadComponentProps) {
     );
 }
 
-export default HeaderComponent;
+export default HeaderModule;

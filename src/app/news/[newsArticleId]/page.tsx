@@ -1,6 +1,6 @@
 //services & types
-import { getNewsArticle } from "@/services/newsArticle";
-import { getNewsArticles } from "@/services/newsArticle";
+import { getNewsArticle } from "@/services/getNewsArticle";
+import { getNewsArticles } from "@/services/getNewsArticle";
 import { NewsArticle } from "@/generated/prisma/client";
 
 //components

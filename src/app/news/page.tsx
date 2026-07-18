@@ -1,5 +1,5 @@
 //services
-import { getNewsArticles } from "../../services/newsArticle";
+import { getNewsArticles } from "../../services/getNewsArticle";
 
 //modules
 import BannerModule from "../../modules/BannerModule";

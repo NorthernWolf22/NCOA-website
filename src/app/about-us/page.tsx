@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 
 //services
 import { getAccordion } from "@/services/getAccordion";
-import { getFiftyFifty } from "@/services/fiftyFifty";
+import { getFiftyFifty } from "@/services/getFiftyFifty";
 import { getCarousel } from '@/services/getCarousel';
 
 //modules
