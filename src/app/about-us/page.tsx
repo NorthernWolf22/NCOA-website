@@ -27,10 +27,6 @@ async function AboutUsPage() {
     if(!fiftyFifty) {
         notFound();
     }
-    
-    if(!carousel) {
-        notFound();
-    }
 
     return (
         <>

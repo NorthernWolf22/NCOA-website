@@ -19,7 +19,7 @@ import CarouselCardComponent from '@/components/CarouselCardComponent';
 type CarouselModuleProps = {
     carousel: Carousel & {
         items: CarouselItems[];
-    }
+    } | null
 };
 
 function CarouselModule({ carousel }: CarouselModuleProps) {
@@ -44,54 +44,62 @@ function CarouselModule({ carousel }: CarouselModuleProps) {
     }
 
     return (
-        <section className="carouselModule">
-            <div className="container">
-                <div className="grid">
-                    <div className='col-4 sm-col-12'>
-                        <SectionHeadingComponent sectionSubHeading="// NCOA team" sectionHeading={carousel?.heading} sectionHeadingLight={carousel?.headingLight} />
-                    </div>
-                    <div className="col-4 sm-col-12">
-                        <div className='carouselModule__inner'>
-                            <div className='carouselModule__inner-controls'>
-                                <IconComponent
-                                    iconType="button" 
-                                    iconName={faChevronLeft} 
-                                    iconSize="large" 
-                                    variant="primary"
-                                    rounded
-                                    className="swiper-button-prev icon--btn icon--primary" 
-                                />
-                                <IconComponent 
-                                    iconType="button" 
-                                    iconName={faChevronRight} 
-                                    iconSize="large" 
-                                    variant="primary"
-                                    rounded
-                                    className="swiper-button-next icon--btn icon--primary" 
-                                />
-                            </div>
-                            <Swiper
-                                modules={[Navigation]}
-                                {...sliderSettings}
-                            >
-                                {
-                                    carousel?.items?.map((carouselItem) => (
-                                        <SwiperSlide>
-                                            <CarouselCardComponent
-                                                carouselImage={carouselItem.carouselImage}
-                                                carouselImageAlt={carouselItem.carouselImageAlt}
-                                                carouselTitle={carouselItem.carouselTitle}
-                                                carouselSubTitle={carouselItem.carouselSubTitle}
+        <>
+            {
+                carousel ? (
+                    <section className="carouselModule">
+                        <div className="container">
+                            <div className="grid">
+                                <div className='col-4 sm-col-12'>
+                                    <SectionHeadingComponent sectionSubHeading="// NCOA team" sectionHeading={carousel?.heading} sectionHeadingLight={carousel?.headingLight} />
+                                </div>
+                                <div className="col-4 sm-col-12">
+                                    <div className='carouselModule__inner'>
+                                        <div className='carouselModule__inner-controls'>
+                                            <IconComponent
+                                                iconType="button"
+                                                iconName={faChevronLeft}
+                                                iconSize="large"
+                                                variant="primary"
+                                                rounded
+                                                className="swiper-button-prev icon--btn icon--primary"
                                             />
-                                        </SwiperSlide>
-                                    ))
-                                }
-                            </Swiper>
+                                            <IconComponent
+                                                iconType="button"
+                                                iconName={faChevronRight}
+                                                iconSize="large"
+                                                variant="primary"
+                                                rounded
+                                                className="swiper-button-next icon--btn icon--primary"
+                                            />
+                                        </div>
+                                        <Swiper
+                                            modules={[Navigation]}
+                                            {...sliderSettings}
+                                        >
+                                            {
+                                                carousel?.items?.map((carouselItem) => (
+                                                    <SwiperSlide>
+                                                        <CarouselCardComponent
+                                                            carouselImage={carouselItem.carouselImage}
+                                                            carouselImageAlt={carouselItem.carouselImageAlt}
+                                                            carouselTitle={carouselItem.carouselTitle}
+                                                            carouselSubTitle={carouselItem.carouselSubTitle}
+                                                        />
+                                                    </SwiperSlide>
+                                                ))
+                                            }
+                                        </Swiper>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    </section>
+                ) : (
+                    <></>
+                )
+            }
+        </>
     );
 }
 

@@ -1,5 +1,8 @@
 import Image from "next/image";
 
+//images
+import defaultCarouselImage from "../../public/images/carousel-card-images/defaultCarouselCardImage.png";
+
 type CarouselCardComponentProps = {
     carouselImage: string;
     carouselImageAlt: string;
@@ -12,14 +15,20 @@ function CarouselCardComponent({ carouselImage, carouselImageAlt, carouselTitle,
         <div className="carouselCardComponent">
             <div className="carouselCardComponent__image-wrapper">
                 <Image 
-                    src={carouselImage}
+                    src={carouselImage ? carouselImage : defaultCarouselImage}
                     alt={carouselImageAlt}
                     fill
                     className="carouselCardComponent__image"
                 />
             </div>
-            <div className="body body--medium body--medium-heavy">{carouselTitle}</div>
-            <div className="body body--small">{carouselSubTitle}</div>
+           {
+                carouselTitle &&
+               <div className="body body--medium body--medium-heavy">{carouselTitle}</div>
+           }
+           {
+                carouselSubTitle &&
+                <div className="body body--small">{carouselSubTitle}</div>
+           }
         </div>
     );
 }
