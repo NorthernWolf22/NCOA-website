@@ -1,5 +1,3 @@
-import { notFound } from "next/navigation";
-
 //services
 import { getAccordion } from "@/services/getAccordion";
 import { getFiftyFifty } from "@/services/getFiftyFifty";
@@ -19,10 +17,6 @@ async function AboutUsPage() {
     const accordion = await getAccordion("club-questions");
     const fiftyFifty = await getFiftyFifty("club-history");
     const carousel = await getCarousel("meet-the-team");
-    
-    if (!accordion) {
-        notFound();
-    }
 
     return (
         <>
@@ -35,7 +29,6 @@ async function AboutUsPage() {
                 fiftyFifty={fiftyFifty}
                 portraitImage         
             />
-
             <CarouselModule 
                 carousel={carousel}
             />

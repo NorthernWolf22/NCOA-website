@@ -13,19 +13,12 @@ import BlocksWithTextModule from "@/modules/BlocksWithTextModule";
 
 //image
 import female_archer from "../../public/images/banner-images/female_archer_draw.jpg";
+import ButtonComponent from "@/components/ButtonComponent";
 
 export default async function Home() {
   const accordion = await getAccordion("archery-types");
   const fiftyFifty = await getFiftyFifty("beginner-courses");
   const blocksItem = await getBlocksItem("1-to-1-coaching");
-
-  if (!accordion) {
-    notFound();
-  }
-
-  if (!fiftyFifty) {
-    notFound();
-  }
 
   if (!blocksItem) {
     notFound();
@@ -55,14 +48,20 @@ export default async function Home() {
         accordion={accordion}
       />
       <FiftyFiftyModule
-        fiftyHeading={fiftyFifty?.fiftyHeading}
-        fiftyHeadingLight={fiftyFifty?.fiftyHeadingLight}
-        fiftyText={fiftyFifty?.fiftyText}
-        fiftyImagePrimary={fiftyFifty?.fiftyImagePrimary}
-        fiftyImagePrimaryAlt={fiftyFifty?.fiftyImagePrimaryAlt}
-        fiftyButtonLabel={fiftyFifty?.fiftyButtonLabel}
-        fiftyButtonUrl={fiftyFifty?.fiftyButtonUrl}
-      />
+        fiftyFifty={fiftyFifty}
+        portraitImage={false}
+      >
+        {
+          (fiftyFifty?.fiftyButtonUrl && fiftyFifty?.fiftyButtonLabel) &&
+          <ButtonComponent
+            href={fiftyFifty.fiftyButtonUrl}
+            buttonType="link"
+            variant="primary"
+          >
+            {fiftyFifty.fiftyButtonLabel}
+          </ButtonComponent>
+        }
+      </FiftyFiftyModule>
     </>
   );
 }

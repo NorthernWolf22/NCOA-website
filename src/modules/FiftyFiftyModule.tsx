@@ -5,7 +5,6 @@ import { FiftyFifty } from "@/generated/prisma/client";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { components } from "@/components/mdx-components";
 import SectionHeadingComponent from "@/components/SectionHeadingComponent";
-import ButtonComponent from "@/components/ButtonComponent";
 
 //images
 import defaultFiftyImage from "../../public/images/banner-images/two_archers_frontshot.jpg";
@@ -45,16 +44,7 @@ function FiftyFiftyModule({ fiftyFifty, portraitImage, children }: FiftyFiftyPro
                                         fiftyFifty?.fiftyText &&
                                         <MDXRemote source={fiftyFifty.fiftyText} components={components} />
                                     }
-                                    {
-                                        (fiftyFifty?.fiftyButtonUrl && fiftyFifty?.fiftyButtonLabel) &&
-                                        <ButtonComponent
-                                            href={fiftyFifty.fiftyButtonUrl}
-                                            buttonType="link"
-                                            variant="primary"
-                                        >
-                                            {fiftyFifty.fiftyButtonLabel}
-                                        </ButtonComponent>
-                                    }
+                                    <>{children}</>
                                 </div>
                                 <div className="col-4 sm-col-12 md-col-7 md-start-8">
                                     <div className="fiftyFiftyModule__image-wrapper">
@@ -65,14 +55,17 @@ function FiftyFiftyModule({ fiftyFifty, portraitImage, children }: FiftyFiftyPro
                                             className="fiftyFiftyModule__image"
                                         />
                                     </div>
-                                    <div className="fiftyFiftyModule__image-wrapper">
-                                        <Image
-                                            src={fiftyFifty?.fiftyImageSecondary ? fiftyFifty.fiftyImageSecondary : defaultFiftyImage}
-                                            alt={fiftyFifty?.fiftyImageSecondaryAlt ? fiftyFifty?.fiftyImageSecondaryAlt : "two archers aiming their bows"}
-                                            fill
-                                            className="fiftyFiftyModule__image"
-                                        />
-                                    </div>
+                                    {
+                                        fiftyFifty?.fiftyImageSecondary &&    
+                                        <div className="fiftyFiftyModule__image-wrapper">
+                                            <Image
+                                                src={fiftyFifty?.fiftyImageSecondary}
+                                                alt={fiftyFifty?.fiftyImageSecondaryAlt ? fiftyFifty?.fiftyImageSecondaryAlt : ""}
+                                                fill
+                                                className="fiftyFiftyModule__image"
+                                            />
+                                        </div>
+                                    }
                                 </div>
                             </div>
                         </div>
