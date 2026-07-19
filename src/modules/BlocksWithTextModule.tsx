@@ -5,23 +5,10 @@ import { BlocksItem } from "@/generated/prisma/client";
 
 //components
 import SectionHeadingComponent from "@/components/SectionHeadingComponent";
-
-//images
 import ButtonComponent from "@/components/ButtonComponent";
 
-// type BlocksWithTextProps = {
-//     blockHeading: string;
-//     blockHeadingLight: string;
-//     blockText: string;
-//     blockImagePrimary: string;
-//     blockImagePrimaryAlt: string;
-//     blockImageSecondary: string;
-//     blockImageSecondaryAlt: string;
-//     blockImageTertiary: string;
-//     blockImageTertiaryAlt: string;
-//     blockButtonLabel: string;
-//     blockButtonUrl: string;
-// }
+//images
+import defaultBlockImage from "../../public/images/two_archers_in_front.jpg";
 
 type BlocksWithTextProps = {
     blocksItem: BlocksItem | null; 
@@ -38,8 +25,8 @@ function BlocksWithTextModule({ blocksItem }: BlocksWithTextProps) {
                                 <div className="col-4 sm-col-5">
                                     <div className="blocksWithTextModule__image-wrapper">
                                         <Image
-                                            src={blocksItem?.blockImagePrimary}
-                                            alt={blocksItem?.blockImagePrimaryAlt}
+                                            src={blocksItem?.blockImagePrimary ? blocksItem?.blockImagePrimary : defaultBlockImage}
+                                            alt={blocksItem?.blockImagePrimaryAlt ? blocksItem?.blockImagePrimaryAlt : "Two archers drawing their bows"}
                                             fill
                                             className="blocksWithTextModule__image"
                                         />
@@ -48,11 +35,14 @@ function BlocksWithTextModule({ blocksItem }: BlocksWithTextProps) {
                                 <div className="col-4 sm-start-6 sm-col-7">
                                     <div className="blocks">
                                         <div className="blocks__topBlock">
-                                            <SectionHeadingComponent
-                                                sectionSubHeading="// Coaching"
-                                                sectionHeading={blocksItem?.blockHeading}
-                                                sectionHeadingLight={blocksItem?.blockHeadingLight}
-                                            />
+                                            {
+                                                blocksItem.blockHeading &&
+                                                <SectionHeadingComponent
+                                                    sectionSubHeading="// Coaching"
+                                                    sectionHeading={blocksItem.blockHeading}
+                                                    sectionHeadingLight={blocksItem.blockHeadingLight}
+                                                />
+                                            }
                                             {
                                                 blocksItem.blockText &&
                                                 <p className="body">
@@ -63,16 +53,16 @@ function BlocksWithTextModule({ blocksItem }: BlocksWithTextProps) {
                                         <div className="blocks__bottomBlock">
                                             <div className="blocks__image-wrapper">
                                                 <Image
-                                                    src={blocksItem?.blockImageSecondary}
-                                                    alt={blocksItem?.blockImageSecondaryAlt}
+                                                    src={blocksItem?.blockImageSecondary ? blocksItem?.blockImageSecondary : defaultBlockImage}
+                                                    alt={blocksItem?.blockImageSecondaryAlt ? blocksItem?.blockImageSecondaryAlt : "Two archers drawing bows"}
                                                     fill
                                                     className="blocks__image"
                                                 />
                                             </div>
                                             <div className="blocks__image-wrapper">
                                                 <Image
-                                                    src={blocksItem?.blockImageTertiary}
-                                                    alt={blocksItem?.blockImageTertiaryAlt}
+                                                    src={blocksItem?.blockImageTertiary ? blocksItem?.blockImageTertiary : defaultBlockImage}
+                                                    alt={blocksItem?.blockImageTertiaryAlt ? blocksItem?.blockImageTertiaryAlt : "Two archers drawing bows"}
                                                     fill
                                                     className="blocks__image"
                                                 />
@@ -81,11 +71,14 @@ function BlocksWithTextModule({ blocksItem }: BlocksWithTextProps) {
                                     </div>
                                 </div>
                                 <div className="col-4 sm-col-12">
-                                    <ButtonComponent
-                                        buttonType="link"
-                                        href={blocksItem?.blockButtonUrl}
-                                        variant="primary"
-                                    >{blocksItem?.blockButtonLabel}</ButtonComponent>
+                                    {
+                                        (blocksItem?.blockButtonUrl || blocksItem?.blockButtonLabel) &&
+                                        <ButtonComponent
+                                            buttonType="link"
+                                            href={blocksItem?.blockButtonUrl}
+                                            variant="primary"
+                                        >{blocksItem?.blockButtonLabel}</ButtonComponent>
+                                    }
                                 </div>
                             </div>
                         </div>

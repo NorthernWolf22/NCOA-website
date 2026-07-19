@@ -1,5 +1,3 @@
-import { notFound } from "next/navigation";
-
 //services
 import { getAccordion } from "@/services/getAccordion";
 import { getFiftyFifty } from "@/services/getFiftyFifty";
@@ -18,12 +16,7 @@ import ButtonComponent from "@/components/ButtonComponent";
 export default async function Home() {
   const accordion = await getAccordion("archery-types");
   const fiftyFifty = await getFiftyFifty("beginner-courses");
-  // const blocksItem = await getBlocksItem("1-to-1-coaching");
-  const blocksItem = await getBlocksItem("1-to-1-coachings"); //incorrect slug test
-
-  // if (!blocksItem) {
-  //   notFound();
-  // }
+  const blocksItem = await getBlocksItem("1-to-1-coaching");
 
   return (
     <>
@@ -34,17 +27,6 @@ export default async function Home() {
       />
       <BlocksWithTextModule
         blocksItem={blocksItem}
-        // blockHeading={blocksItem.blockHeading}
-        // blockHeadingLight={blocksItem.blockHeadingLight}
-        // blockText={blocksItem.blockText}
-        // blockImagePrimary={blocksItem.blockImagePrimary}
-        // blockImagePrimaryAlt={blocksItem.blockImagePrimaryAlt}
-        // blockImageSecondary={blocksItem.blockImageSecondary}
-        // blockImageSecondaryAlt={blocksItem.blockImageSecondaryAlt}
-        // blockImageTertiary={blocksItem.blockImageTertiary}
-        // blockImageTertiaryAlt={blocksItem.blockImageTertiaryAlt}
-        // blockButtonLabel={blocksItem.blockButtonLabel ? blocksItem.blockButtonLabel : ""}
-        // blockButtonUrl={blocksItem.blockButtonUrl ? blocksItem.blockButtonUrl : ""}
       />
       <AccordionModule
         accordion={accordion}
