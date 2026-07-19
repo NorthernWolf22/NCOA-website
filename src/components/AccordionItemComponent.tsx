@@ -8,8 +8,6 @@ import IconComponent from "@/components/IconComponent";
 import { faBullseye, faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-
-
 type AccordionItemProps = {
     accItem: AccordionItem;
     activeId: number | null;
@@ -24,7 +22,6 @@ function AccordionItemComponent({ accItem, activeId, toggleItem }: AccordionItem
         .filter(Boolean)
         .join(" ");
 
-
     return (
         <div className={`${accordionStyles} ${activeId === accItem.id ? "accItem--open" : ""}`} key={accItem.id}>
             <button
@@ -35,7 +32,7 @@ function AccordionItemComponent({ accItem, activeId, toggleItem }: AccordionItem
                 
                 <FontAwesomeIcon icon={faBullseye} className="accItem__icon" />
 
-                <span>{accItem.accordionlabel}</span>
+                <span>{accItem?.accordionlabel}</span>
 
                 <IconComponent iconType="decorative" iconName={faPlus} iconSize="medium" variant="secondary-unfilled" className="accItem__control accItem__control--plus" />
                 <IconComponent iconType="decorative" iconName={faMinus} iconSize="medium" variant="secondary-unfilled" className="accItem__control accItem__control--minus" />
@@ -49,7 +46,7 @@ function AccordionItemComponent({ accItem, activeId, toggleItem }: AccordionItem
                     aria-labelledby="accordion-1"
                     hidden={activeId !== accItem.id}
                 >
-                    {accItem.accordionContent}
+                    {accItem?.accordionContent}
                 </div>
             }
         </div>

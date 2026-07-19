@@ -48,7 +48,8 @@ model NewsArticle {
   id                Int              @id @default(autoincrement())
   articleTitle      String
   articleText       String
-  articleImage      String           
+  articleImage      String     
+  articleImageAlt   String      
   articleCreateDate DateTime         @default(now())
   articleAuthor     String
   articleCategory   ArticleCategory

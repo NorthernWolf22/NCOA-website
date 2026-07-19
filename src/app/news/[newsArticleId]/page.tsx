@@ -4,11 +4,13 @@ import { getNewsArticles } from "@/services/getNewsArticle";
 import { NewsArticle } from "@/generated/prisma/client";
 
 //components
-import { notFound } from "next/navigation";
 import ArticleModule from "@/modules/ArticleModule";
 
 //modules
 import BannerModule from "@/modules/BannerModule";
+
+//images
+import defaultBannerImage from "../../../../public/images/two_archers_in_front.jpg";
 
 type NewsArticleIdProps = {
     params: Promise<{ newsArticleId: string }>;
@@ -30,16 +32,12 @@ async function NewsArticleId({ params }: NewsArticleIdProps) {
     const newsArticleId = (await params).newsArticleId;
     const article = await getNewsArticle(parseInt(newsArticleId));
 
-    if(!article) {
-        notFound();
-    }
-
     return (
         <>
             <BannerModule 
                 bannerTitle="News article"
-                bannerImage={article.articleImage}
-                bannerImageAlt={article.articleTitle}
+                bannerImage={article?.articleImage ? article?.articleImage : defaultBannerImage}
+                bannerImageAlt={article?.articleImageAlt ? article?.articleImageAlt : "Two archers drawing bows"}
             />
             <ArticleModule  
                 article={article}

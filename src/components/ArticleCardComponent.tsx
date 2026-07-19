@@ -1,8 +1,17 @@
-import { NewsArticle } from "@/generated/prisma/client";
-import { setCategoryColour } from "@/utils/setCategoryColour";
 import Image from "next/image";
 import Link from "next/link";
+
+//types
+import { NewsArticle } from "@/generated/prisma/client";
+
+//utils
+import { setCategoryColour } from "@/utils/setCategoryColour";
+
+//components
 import LinkComponent from "./LinkComponent";
+
+//images
+import defaultArticleCardImage from "../../public/images/two_archers_in_front.jpg";
 
 type ArticleCardProps = {
     article: NewsArticle;
@@ -17,8 +26,8 @@ function ArticleCardComponent({ article }: ArticleCardProps) {
         >
             <div className="articleCard__image-wrapper">
                 <Image
-                    src={article.articleImage}
-                    alt={article.articleTitle}
+                    src={article.articleImage ? article.articleImage : defaultArticleCardImage}
+                    alt={article.articleImageAlt ? article.articleImageAlt : ""}
                     fill
                     className="articleCard__image"
                 />

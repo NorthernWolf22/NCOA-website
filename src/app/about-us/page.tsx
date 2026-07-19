@@ -1,5 +1,3 @@
-import { notFound } from "next/navigation";
-
 //services
 import { getAccordion } from "@/services/getAccordion";
 import { getFiftyFifty } from "@/services/getFiftyFifty";
@@ -19,18 +17,6 @@ async function AboutUsPage() {
     const accordion = await getAccordion("club-questions");
     const fiftyFifty = await getFiftyFifty("club-history");
     const carousel = await getCarousel("meet-the-team");
-    
-    if (!accordion) {
-        notFound();
-    }
-    
-    if(!fiftyFifty) {
-        notFound();
-    }
-    
-    if(!carousel) {
-        notFound();
-    }
 
     return (
         <>
@@ -40,14 +26,8 @@ async function AboutUsPage() {
                 bannerImageAlt="two archers"
             />
             <FiftyFiftyModule
-                fiftyHeading={fiftyFifty?.fiftyHeading}
-                fiftyHeadingLight={fiftyFifty?.fiftyHeadingLight}
-                fiftyText={fiftyFifty?.fiftyText}
-                fiftyImagePrimary={fiftyFifty?.fiftyImagePrimary}
-                fiftyImagePrimaryAlt={fiftyFifty?.fiftyImagePrimaryAlt}
-                fiftyImageSecondary={fiftyFifty?.fiftyImageSecondary}
-                fiftyImageSecondaryAlt={fiftyFifty?.fiftyImageSecondaryAlt}
-                portraitImage                
+                fiftyFifty={fiftyFifty}
+                portraitImage         
             />
             <CarouselModule 
                 carousel={carousel}
