@@ -30,7 +30,7 @@ async function NewsPage({searchParams}: NewsPageProps) {
             <BannerModule
                 bannerTitle="News"
                 bannerImage={targets_on_field}
-                bannerImageAlt="two archers"
+                bannerImageAlt="Large archery targets in a row on a field"
             />
             <ArticlesModule
                 category={category}

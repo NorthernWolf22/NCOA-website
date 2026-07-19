@@ -10,7 +10,7 @@ import ButtonComponent from "@/components/ButtonComponent";
 import ArticleCardComponent from "@/components/ArticleCardComponent";
 
 type ArticleModuleProps = {
-    article: NewsArticle;
+    article: NewsArticle | null;
     randomArticles: NewsArticle[];
 };
 
@@ -44,12 +44,16 @@ function ArticleModule({ article, randomArticles }: ArticleModuleProps) {
                                 <div className="side-panel">
                                     <div className="side-panel__heading">Featured articles</div>
                                     {
-                                        randomArticles?.map((article) => (
-                                            <ArticleCardComponent
-                                                key={article.id}
-                                                article={article}
-                                            />                                    
-                                        ))
+                                        randomArticles?.length > 0 ? (
+                                            randomArticles?.map((article) => (
+                                                <ArticleCardComponent
+                                                    key={article.id}
+                                                    article={article}
+                                                />                                    
+                                            ))
+                                        ) : (
+                                            <p className="body">There are no featured ariticles, please check back later</p>
+                                        )
                                     }
                                 </div>
                             </div>
