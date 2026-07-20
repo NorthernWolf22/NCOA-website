@@ -40,9 +40,8 @@
     <li><p><strong>Image optimisation - </strong>Utilised Next.js’s built‑in, performance‑optimised image component that automatically handles sizing, formats, lazy loading, and layout stability</p></li>
     <li><p><strong>Links - </strong>Link is Next.js’s built‑in, performance‑optimised navigation component that gives you fast client‑side routing with automatic prefetching and seamless page transitions</p></li>
     <li><p><strong>Meta data - </strong>Utilised the metadata object that Next.js uses to populate the HTML title and description tags</p></li>
-    <li><p><strong>Error routes - </strong></p></li>
-    <li><p><strong>Not found routes - </strong></p></li>
-
+    <li><p><strong>Not found routes - </strong> Directs users to a custom not found page if any attempts to navigate to pages which do not exist.</p></li>
+    <li><p><strong>Errors - </strong>To handle failed data retrival, I have utilised effective defensive UI design / resiliant rendering techniques meaning if the data for a module could not be fetched the module in question would be hidden, all other page modules would remain unaffected.</p></li>
 </ul>
 
 <h3>Typescript</h3>
